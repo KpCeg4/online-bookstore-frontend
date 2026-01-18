@@ -1,13 +1,358 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background-color: #f5f3ef;
+  font-family: "Segoe UI", sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.btn-primary {
+  background-color: #8b5e3c;
+  border: none;
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: #754c2f;
+  color: #ffffff;
+}
+
+.btn-primary:focus,
+.btn-primary:active {
+  background-color: #754c2f;
+  color: #ffffff;
+  box-shadow: none;
+}
+
+.rounded-btn {
+  border-radius: 20px;
+}
+
+.custom-navbar {
+  width: 100%;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #4b0f16;
+  border-bottom: 1px solid #3a0b11;
+}
+
+.navbar-left .navbar-brand {
+  font-size: 20px;
+  font-weight: 700;
+  color: #d4af37;
+  text-decoration: none;
+}
+
+.navbar-center {
+  display: flex;
+  gap: 30px;
+}
+
+.navbar-center .nav-link {
+  color: #d4af37;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.navbar-center .nav-link:hover {
+  color: #f1cf5a;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.navbar-user {
+  font-weight: 500;
+  color: #d4af37;
+}
+
+.featured-carousel {
+  width: 100%;
+}
+
+.featured-carousel .carousel-inner,
+.featured-carousel .carousel-item {
+  height: 420px;
+}
+
+.featured-carousel .carousel-item {
+  overflow: hidden;
+}
+
+.featured-slide-bg {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.featured-slide-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(245, 243, 239, 0.88);
+  z-index: 1;
+}
+
+.featured-slide-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 16px;
+  text-align: center;
+}
+
+.featured-title {
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  margin-bottom: 32px;
+  font-family: "Georgia", serif;
+  color: #2c2c2c;
+}
+
+.featured-books {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.featured-book-card {
+  width: 160px;
+  text-align: center;
+}
+
+.featured-book-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.featured-book-name {
+  margin-top: 10px;
+  font-weight: 500;
+  color: #2c2c2c;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.category-selector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.category-chip {
+  padding: 8px 18px;
+  border-radius: 20px;
+  background-color: #e2dfd8;
+  color: #2c2c2c;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.category-chip:hover {
+  background-color: #d6d2c9;
+}
+
+.category-chip.active {
+  background-color: #8b5e3c;
+  color: #ffffff;
+}
+
+.small-book-card {
+  height: 330px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffffff;
+}
+
+.small-book-image-wrapper {
+  height: 170px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+}
+
+.small-book-image {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.small-book-content {
+  min-height: 78px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.small-book-title {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 6px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.small-book-price {
+  font-weight: 600;
+  margin-top: 6px;
+}
+
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 16px;
+}
+
+.book-card-large {
+  background-color: #ffffff;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #e2dfd8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.book-image-wrapper-large {
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.book-image-wrapper-large img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.book-card-body {
+  text-align: center;
+  margin-top: 6px;
+}
+
+.book-card-title {
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 2px;
+}
+
+.book-card-author {
+  font-size: 13px;
+  color: #666666;
+  margin-bottom: 4px;
+}
+
+.book-card-price {
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.cart-page {
+  min-height: 60vh;
+}
+
+.cart-row {
+  display: grid;
+  grid-template-columns: 80px 3fr 2fr 1.5fr 1fr;
+  align-items: center;
+  padding: 18px 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.cart-col {
+  display: flex;
+  align-items: center;
+}
+
+.cart-col.image {
+  justify-content: center;
+}
+
+.cart-thumbnail {
+  width: 48px;
+  height: 72px;
+  object-fit: contain;
+}
+
+.cart-col.title {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.cart-col.qty {
+  justify-content: center;
+  gap: 12px;
+}
+
+.cart-col.price {
+  justify-content: flex-end;
+  font-weight: 600;
+}
+
+.cart-col.remove {
+  justify-content: flex-end;
+}
+
+.qty-btn {
+  width: 32px;
+  height: 32px;
+  border: 1px solid #adb5bd;
+  background-color: #ffffff;
+  border-radius: 6px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.qty-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.qty-value {
+  min-width: 20px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.cart-total-row {
+  border-top: 2px solid #d0d0d0;
+}
+
+.cart-pay-row {
+  border-bottom: none;
+  padding-top: 12px;
+}
+
+.btn-metallic-blue {
+  background: linear-gradient(135deg, #3a6ea5, #274b7a);
+  border: none;
+  color: #ffffff;
+  padding: 6px 14px;
+  border-radius: 16px;
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.btn-metallic-blue:hover {
+  background: linear-gradient(135deg, #345f8f, #1f3e66);
+  color: #ffffff;
 }

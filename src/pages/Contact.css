@@ -1,0 +1,52 @@
+.contact-wrapper {
+  min-height: calc(100vh - 64px);
+  background-image: url("../assets/aboutus.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+}
+
+.contact-overlay {
+  flex: 1;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.55),
+    rgba(0, 0, 0, 0.3)
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-content {
+  max-width: 760px;
+  padding: 64px 48px;
+  text-align: center;
+  color: #eae6dc;
+  font-family: "Georgia", serif;
+}
+
+.contact-title {
+  font-size: 34px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: #d4af37;
+}
+
+.contact-text {
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.contact-section {
+  margin-top: 24px;
+}
+
+.contact-subtitle {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #f1cf5a;
+}
