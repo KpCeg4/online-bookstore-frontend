@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import api from "../api/axios";
 import AdminNavbar from "../components/AdminNavbar";
 
 export default function AdminOrders() {
@@ -8,11 +8,7 @@ export default function AdminOrders() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get("http://localhost:8080/api/orders", {
-      headers: {
-        Authorization: `Bearer ${localStorage.getItem("token")}`
-      }
-    }).then(res => {
+    api.get("/api/orders").then(res => {
       setOrders(res.data);
     });
   }, []);
