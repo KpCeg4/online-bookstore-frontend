@@ -1,6 +1,6 @@
 import { useState } from "react";
-import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
+import api from "../api/axios";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -12,34 +12,36 @@ export default function Login() {
     e.preventDefault();
     setError("");
 
-    axios.post("http://localhost:8080/api/users/login", {
+    api.post("/api/users/login", {
       email,
       password
-    }).then(res => {
-      localStorage.clear();
+    })
+      .then(res => {
+        localStorage.clear();
 
-      localStorage.setItem("token", res.data.token);
+        localStorage.setItem("token", res.data.token);
 
-      const user = {
-        name: res.data.name,
-        email: res.data.email,
-        role: res.data.role
-      };
+        const user = {
+          name: res.data.name,
+          email: res.data.email,
+          role: res.data.role
+        };
 
-      localStorage.setItem("user", JSON.stringify(user));
+        localStorage.setItem("user", JSON.stringify(user));
 
-      if (user.role === "ADMIN") {
-        navigate("/admin");
-      } else {
-        navigate("/");
-      }
-    }).catch(err => {
-      if (err.response && err.response.status === 403) {
-        setError("Invalid email or password");
-      } else {
-        setError("Something went wrong. Please try again.");
-      }
-    });
+        if (user.role === "ADMIN") {
+          navigate("/admin");
+        } else {
+          navigate("/");
+        }
+      })
+      .catch(err => {
+        if (err.response && err.response.status === 403) {
+          setError("Invalid email or password");
+        } else {
+          setError("Something went wrong. Please try again.");
+        }
+      });
   };
 
   return (
