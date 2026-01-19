@@ -1,12 +1,11 @@
-import axios from "axios";
 import api from "./axios";
 
 export const registerUser = (user) => {
-  return axios.post("http://localhost:8080/api/users/register", user);
+  return api.post("/api/users/register", user);
 };
 
 export const loginUser = (user) => {
-  return axios.post("http://localhost:8080/api/users/login", user);
+  return api.post("/api/users/login", user);
 };
 
 export const getAllUsers = () => {
